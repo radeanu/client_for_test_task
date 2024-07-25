@@ -1,0 +1,64 @@
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+  :-moz-placeholder {
+    @content;
+  }
+  ::-moz-placeholder {
+    @content;
+  }
+  :-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin min-max($value) {
+  min-width: $value;
+  max-width: $value;
+  min-height: $value;
+  max-height: $value;
+}
+
+@mixin scroll-bar(
+  $size: 7px,
+  $thumb-color: var(--primary-color),
+  $track-color: var(--border-color),
+  $border-radius: var(--border-radius),
+  $track-border-radius: 5px
+) {
+  &::-webkit-scrollbar {
+    display: block;
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb-color;
+    border-right: none;
+    border-radius: $border-radius;
+    border-left: none;
+  }
+
+  &::-webkit-scrollbar-track-piece:end {
+    background: $track-color;
+    border-radius: $track-border-radius;
+  }
+
+  &::-webkit-scrollbar-track-piece:start {
+    background: $track-color;
+    border-radius: $track-border-radius;
+  }
+}
+
+@function tint($color, $percentage) {
+  @return mix(#fff, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(#000, $color, $percentage);
+}
