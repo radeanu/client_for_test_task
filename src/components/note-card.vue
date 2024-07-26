@@ -135,4 +135,3 @@ async function handleDeleteNote() {
 	}
 }
 </script>
-~/composables/useLoading~/composables/useApiService

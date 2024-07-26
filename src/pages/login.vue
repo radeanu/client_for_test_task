@@ -96,6 +96,3 @@ async function onSubmit(event: FormSubmitEvent<LoginPayload>) {
 	}
 }
 </script>
-
-<style lang="scss" scoped></style>
-~/composables/useLoading

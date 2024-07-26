@@ -97,7 +97,7 @@ async function handleCreateNote(note: BaseNote) {
 
 		notesData.value.results.unshift(res);
 	} catch (error) {
-		console.log(error);
+		console.error(error);
 		toast.add({ title: 'Произошла ошибка', color: 'red', timeout: 2000 });
 	} finally {
 		createLoader.end();
@@ -124,4 +124,3 @@ async function loadNotes() {
 	}
 }
 </script>
-~/composables/useLoading~/composables/useApiService

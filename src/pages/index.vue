@@ -3,7 +3,5 @@
 </template>
 
 <script setup lang="ts">
-useHead({
-	title: 'Главная'
-});
+useHead({ title: 'Главная' });
 </script>
