@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+	srcDir: 'src/',
 	nitro: {
 		preset: 'node-server'
 	},
-	css: ['~/assets/styles/main.scss'],
 	compatibilityDate: '2024-04-03',
 	app: {
 		baseURL: '/',
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 			viewport: 'width=device-width, initial-scale=1'
 		}
 	},
-	modules: ['@nuxt/eslint', '@nuxt/image', '@pinia/nuxt', '@nuxt/ui', '@nuxt/icon'],
+	modules: ['@nuxt/eslint', '@pinia/nuxt', '@nuxt/ui', '@nuxt/icon'],
 	devtools: { enabled: true },
 	colorMode: {
 		preference: 'light'

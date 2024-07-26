@@ -1,9 +1,3 @@
-export type ApiResponse<T> = {
-	ok: boolean;
-	message?: string;
-	data?: T;
-};
-
 export type User = {
 	email: string;
 	user_id: number;
@@ -19,10 +13,13 @@ export type LoginPayload = {
 	password: string;
 };
 
-export type Note = {
-	id: number;
+export type BaseNote = {
 	body: string;
 	title: string;
+};
+
+export type Note = BaseNote & {
+	id: number;
 	created_at: string;
 };
 
@@ -33,10 +30,16 @@ export type ApiNotesResult = {
 	results: Note[];
 };
 
-export type Pagination = {
-	count: number;
-	page: number;
-	perPage: number;
-	next: number | null;
-	previous: number | null;
+export type NoteFormFieldSchema = {
+	name: keyof BaseNote;
+	value: string;
+	label: string;
+	required: boolean;
+};
+
+export type UserFormFieldSchema = {
+	name: keyof LoginPayload;
+	value: string;
+	label: string;
+	required: boolean;
 };

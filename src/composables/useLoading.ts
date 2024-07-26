@@ -1,26 +1,23 @@
-export default function () {
+export function useLoading() {
 	const loading = ref(0);
-	const title = ref<string>();
 
 	const isLoading = computed(() => loading.value > 0);
 
-	function start(text?: string) {
+	function start() {
 		loading.value += 1;
-		title.value = text;
 	}
 
-	function end() {
+	function end(timeout = 300) {
 		if (loading.value === 0) return;
 
 		setTimeout(() => {
 			loading.value -= 1;
-		}, 300);
+		}, timeout);
 	}
 
 	return {
 		end,
 		start,
-		title: readonly(title),
 		isLoading: readonly(isLoading)
 	};
 }
