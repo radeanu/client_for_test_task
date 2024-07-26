@@ -1,75 +1,27 @@
-# Nuxt 3 Minimal Starter
+## Запуск клиента:
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Доступен по http://localhost:3000
 
-## Setup
+-   Docker
 
-Make sure to install the dependencies:
+    ```
+    docker-compose up
+    ```
 
-```bash
-# npm
-npm install
+-   Npm dev
+    ```
+    npm install
+    npm run dev
+    ```
 
-# pnpm
-pnpm install
+##
 
-# yarn
-yarn install
+P.S
 
-# bun
-bun install
-```
+По авторизацию, так себе хранить токен в `Pinia` или `localStorage`, может не правильно
+понял. А так, можно было пробовать через `cookie`.
 
-## Development Server
+Из за неправильной пагинации, нет `SSR`, сервер сам должен сортировать по дате.
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+При добавлении/удалении заметки, надо ли обновить весь список повторно, или только
+локально(сейчас так работает)?
