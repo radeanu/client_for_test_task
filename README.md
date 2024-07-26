@@ -2,7 +2,7 @@
 
 Доступен по http://localhost:3000
 
--   Docker
+-   Docker (если пакеты долго скачиваются, попробуйте через VPN)
 
     ```
     docker-compose up

@@ -24,5 +24,9 @@ export default defineNuxtConfig({
 		public: {
 			API_BASE_URL: process.env.API_BASE_URL
 		}
+	},
+	routeRules: {
+		'/': { prerender: true },
+		'/login': {prerender: true }
 	}
 });

@@ -16,12 +16,6 @@ export const useAuthStore = defineStore('auth', () => {
 		return token !== null;
 	});
 
-	watchEffect(() => {
-		if (!user.value?.token) return;
-
-		appLocalStorage.setItem(TOKEN_KEY, user.value.token);
-	});
-
 	function getToken(): string | null {
 		const storeToken = user.value?.token ?? null;
 
@@ -31,6 +25,8 @@ export const useAuthStore = defineStore('auth', () => {
 	async function login(payload: LoginPayload): Promise<void> {
 		const res = await apiService.userLogin(payload);
 		user.value = res;
+
+		appLocalStorage.setItem(TOKEN_KEY, user.value.token);
 	}
 
 	function logout() {
