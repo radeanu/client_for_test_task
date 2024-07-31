@@ -1,5 +1,5 @@
 <template>
-	<div class="w-screen w-dvw h-screen h-dvh m-0 overflow-auto">
+	<div id="app-layout" class="w-screen w-dvw h-screen h-dvh m-0 overflow-auto">
 		<div class="sticky top-0 bg-white z-50">
 			<div
 				class="flex justify-between gap-10 items-center h-14 px-[var(--layout-pad-x)] mx-auto max-w-7xl"

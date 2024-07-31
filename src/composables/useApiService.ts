@@ -17,11 +17,11 @@ export function useApiService() {
 			if (!token) return;
 
 			options.headers = new Headers(options.headers);
-			options.headers.set('Authorization', `Token ${token}`);
+			options.headers.set('Authorization', `Bearer ${token}`);
 		},
 		onResponse: async (ctx) => {
 			if (ctx.response.status === 401) {
-				await navigateTo('/login');
+				await authStore.logout();
 				return;
 			}
 		}

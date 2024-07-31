@@ -1,0 +1,11 @@
+:root {
+	--layout-pad-x: 8px;
+
+	@media (min-width: 768px) {
+		--layout-pad-x: 16px;
+	}
+
+	@media (min-width: 1920px) {
+		--layout-pad-x: 32px;
+	}
+}

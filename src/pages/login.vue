@@ -86,9 +86,8 @@ async function onSubmit(event: FormSubmitEvent<LoginPayload>) {
 		await authStore.login(event.data);
 		await navigateTo('/notes');
 	} catch (e) {
-		console.log(e);
-		const error = e as { data: { error: string } };
-		const message = error?.data?.error ?? 'Ошибка';
+		const error = e as { data: { message: string } };
+		const message = error?.data?.message ?? 'Ошибка';
 
 		submitError.value = message;
 	} finally {

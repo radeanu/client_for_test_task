@@ -25,8 +25,8 @@ export type Note = BaseNote & {
 
 export type ApiNotesResult = {
 	count: number;
-	next: string | null;
-	previous: string | null;
+	next: number | null;
+	previous: number | null;
 	results: Note[];
 };
 

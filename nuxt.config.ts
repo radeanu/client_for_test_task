@@ -5,6 +5,7 @@ export default defineNuxtConfig({
 		preset: 'node-server'
 	},
 	compatibilityDate: '2024-04-03',
+	css: ['~/assets/styles/main.scss'],
 	app: {
 		baseURL: '/',
 		head: {
@@ -23,10 +24,11 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {
 			API_BASE_URL: process.env.API_BASE_URL
-		}
+		},
+		privateKey: process.env.API_PRIVATE_JWT_TOKEN
 	},
 	routeRules: {
 		'/': { prerender: true },
-		'/login': {prerender: true }
+		'/login': { prerender: true }
 	}
 });
